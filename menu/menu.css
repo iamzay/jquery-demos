@@ -1,0 +1,12 @@
+.ui-menu-item:hover {
+    background: tomato;
+}
+.ui-menu-item {
+    width: 100px;
+    text-align: center;
+}
+.ui-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
