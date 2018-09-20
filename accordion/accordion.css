@@ -1,0 +1,16 @@
+.ui-accordion>h3 {
+    margin: 0;
+    padding: 0;
+    background: gray;
+    border: 1px solid black;
+    border-top: none;
+}
+.ui-accordion>h3:nth-child(1) {
+    border-top: 1px solid black;
+}
+.ui-accordion>h3.ui-state-active {
+    background: skyblue;
+}
+.ui-accordion>div {
+    border: 1px solid gray;
+}
