@@ -4,9 +4,13 @@
 .ui-menu-item {
     width: 100px;
     text-align: center;
+    position: relative;
 }
 .ui-menu {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+.ui-menu .ui-menu {
+    position: absolute;
 }

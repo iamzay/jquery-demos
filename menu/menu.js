@@ -13,45 +13,37 @@ class Menu {
         this.menu = $(element)
         this.menu.addClass('ui-menu')
         this.menu.children().each((index,item) => {
-            const children = $(item).children()
-            const parent = children.first()
-            parent.addClass('ui-menu-item')
+            const menuItem = $(item)
+            menuItem.addClass('ui-menu-item')
 
+            const children = $(item).children()
             // process submenu
+            // 当点击parent时需要出现subMenu
             if(children.length > 1) {
 
                 const subMenu = children.filter(menuTag)
-                this._setSubMenuPosition(parent,subMenu)
+                this._setSubMenuPosition(menuItem,subMenu)
                 subMenu.hide()
 
-                parent.on('mouseenter', event => {
+                menuItem.on('mouseenter', event => {
                     subMenu.show()
+                    console.log('h')
                 })
-                parent.on('mouseleave', event => {
+                menuItem.on('mouseleave', event => {
                     subMenu.hide()
                 })
 
                 this._processMenu(subMenu)
             }
         })
+
     }
 
     _setSubMenuPosition(parent,subMenu) {
-        const parentOffset= parent.offset()
-        const parentWidth= parent.outerWidth(true)
-        subMenu.offset({
-            left: parentOffset.left + parentWidth,
-            top: parentOffset.top,
-        })
-
-        let lastSibling = parent
-        parent.nextAll().each((index,sibling) => {
-            $(sibling).offset({
-                top: lastSibling.offset().top + lastSibling.outerHeight,
-                left: lastSibling.offset().left,
-            })
-            lastSibling = $(sibling)
-        })
+        // 设置submenu的left值    
+        const left = (parent.outerWidth() - parent.width()) / 2 + parent.width()
+        subMenu.css('left',left + 'px')
+        subMenu.css('top', 0)
     }
 
 }
