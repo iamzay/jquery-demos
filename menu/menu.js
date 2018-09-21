@@ -39,7 +39,6 @@ class Menu {
     }
 
     _setSubMenuPosition(parent,subMenu) {
-        // 设置submenu的left值    
         const left = (parent.outerWidth() - parent.width()) / 2 + parent.width()
         subMenu.css('left',left + 'px')
         subMenu.css('top', 0)
