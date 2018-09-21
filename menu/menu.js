@@ -27,7 +27,6 @@ class Menu {
 
                 menuItem.on('mouseenter', event => {
                     subMenu.show()
-                    console.log('h')
                 })
                 menuItem.on('mouseleave', event => {
                     subMenu.hide()
