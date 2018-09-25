@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 1px solid gray;
+            width: 100px;
+            height: 100px;
+        }
+        .large {
+            width: 300px;
+            height: 300px;
+        }
+        .blue {
+            background: skyblue;
+        }
+        .tomato {
+            background: tomato;
+        }
+    </style>
+</head>
+<body>
+    <div class="box large blue"></div>
+    <div class="box tomato"></div>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./position.js"></script>
+    <script>
+        const boxes = $('div')
+        position(boxes[1], boxes[0], 'center', 'center')
+    </script>
+</body>
+</html>
