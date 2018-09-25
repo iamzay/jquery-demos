@@ -5,8 +5,7 @@ class Accordion {
             element: document.body,
             collapsible: false,
         }
-        option = Object.assign({},defaultOption,option)
-        this.option = option
+        this.option = Object.assign({},defaultOption,option)
 
         this._processSections()
     }
