@@ -26,11 +26,52 @@
 <body>
     <div class="box large blue"></div>
     <div class="box tomato"></div>
+    <form action="">
+        <div class="form-line">
+            <span>小盒子对齐方式:</span>
+            <select name="align-horizontal1" id="align-horizontal1">
+                <option value="left">left</option>
+                <option value="center">center</option>
+                <option value="right">right</option>
+            </select>
+            <select name="align-vertical1" id="align-vertical1">
+                <option value="top">top</option>
+                <option value="center">center</option>
+                <option value="bottom">bottom</option>
+            </select>
+        </div>
+        <div class="form-line">
+            <span>大盒子对子方式:</span>
+            <select name="align-horizontal2" id="align-horizontal2">
+                <option value="left">left</option>
+                <option value="center">center</option>
+                <option value="right">right</option>
+            </select>
+            <select name="align-vertical2" id="align-vertical2">
+                    <option value="top">top</option>
+                    <option value="center">center</option>
+                    <option value="bottom">bottom</option>
+            </select>
+        </div>
+        <div class="form-line">
+            <button id="resetButton">重新定位</button>
+        </div>
+    </form>
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./position.js"></script>
     <script>
-        const boxes = $('div')
-        position(boxes[1], boxes[0], 'center', 'center')
+        $(function(){
+            $('#resetButton').click(function (event) {
+                event.preventDefault()
+
+                const boxes = $('div')
+                const select = $('select')
+                const align1 = select.eq(0).val() + ' ' + select.eq(1).val()
+                const align2 = select.eq(2).val() + ' ' + select.eq(3).val()
+                console.log(align1, align2)
+                position(boxes[1], boxes[0], align1, align2)
+            })
+        })
     </script>
 </body>
 </html>
